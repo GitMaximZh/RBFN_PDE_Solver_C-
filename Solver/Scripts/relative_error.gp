@@ -1,0 +1,1 @@
+splot 'relative_error.dat' t 'Relative error'

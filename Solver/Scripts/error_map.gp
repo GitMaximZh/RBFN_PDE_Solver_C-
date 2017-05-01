@@ -1,0 +1,1 @@
+splot 'error_map.dat' t 'Error map'

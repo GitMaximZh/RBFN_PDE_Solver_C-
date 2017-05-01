@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85B2D4F6-94B8-4E06-92AF-27AEECCD73C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EITProblem</RootNamespace>
+    <AssemblyName>EITProblem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\packages\MathNet.Numerics.2.3.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Coefficient\CoefficientControlPoint.cs" />
+    <Compile Include="Coefficient\ControlPointsFactory.cs" />
+    <Compile Include="Coefficient\CoefficientSuite.cs" />
+    <Compile Include="Direct\BoundControlPoint.cs" />
+    <Compile Include="Direct\ControlPointsFactory.cs" />
+    <Compile Include="Direct\UElectrodeBoundControlPoint.cs" />
+    <Compile Include="Direct\IElectrodeBoundControlPoint.cs" />
+    <Compile Include="Direct\ElectrodeControlPoint.cs" />
+    <Compile Include="Direct\UEqualityCheckPoint.cs" />
+    <Compile Include="Direct\IEqualityCheckPoint.cs" />
+    <Compile Include="Direct\InnerControlPoint.cs" />
+    <Compile Include="Direct\DirectSuite.cs" />
+    <Compile Include="Inverse\BoundControlPoint.cs" />
+    <Compile Include="Inverse\ControlPointsFactory.cs" />
+    <Compile Include="Inverse\IElectrodeBoundControlPoint.cs" />
+    <Compile Include="Inverse\IEqualityCheckPoint.cs" />
+    <Compile Include="Inverse\InnerControlPoint.cs" />
+    <Compile Include="Inverse\InverseSuite.cs" />
+    <Compile Include="Inverse\UElectrodeBoundControlPoint.cs" />
+    <Compile Include="Inverse\UEqualityCheckPoint.cs" />
+    <Compile Include="Inverse\UMeasurementControlPoint.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\Part.cs" />
+    <Compile Include="Model\Side.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrustRegion\TrustMethodFactory.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{52050015-C860-4434-8757-D4146D0CC390}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OptimizationToolbox\OptimizationToolbox.csproj">
+      <Project>{F3F84AF0-712B-4F23-A702-6C0CC6846DD8}</Project>
+      <Name>OptimizationToolbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PDE\PDE.csproj">
+      <Project>{EBF673A3-325A-4270-817D-3AE645EEDD6C}</Project>
+      <Name>PDE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RBFNetwork\RBFNetwork.csproj">
+      <Project>{3DCBFA0D-DAA4-4FBF-BA3D-9F5E626AA11A}</Project>
+      <Name>RBFNetwork</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

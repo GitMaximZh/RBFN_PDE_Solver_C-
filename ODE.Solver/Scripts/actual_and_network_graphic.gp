@@ -1,0 +1,1 @@
+plot 'actual_and_network_graphic.dat' u 1:2 t 'Actual' with lines, 'actual_and_network_graphic.dat' u 3:4 t 'Network' with lines

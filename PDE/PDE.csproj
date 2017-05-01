@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EBF673A3-325A-4270-817D-3AE645EEDD6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PDE</RootNamespace>
+    <AssemblyName>PDE</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MathNet.Numerics, Version=2.3.0.25, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Function\DifferentiableErrorFunction.cs" />
+    <Compile Include="Function\FunctionExtention.cs" />
+    <Compile Include="Function\JacobianDifferentiableErrorFunction.cs" />
+    <Compile Include="Function\JacobianErrorFunction.cs" />
+    <Compile Include="Function\JacobianTwiceDifferentiableErrorFunction.cs" />
+    <Compile Include="Optimizer\CommonSubOptimizer.cs" />
+    <Compile Include="Optimizer\CompositeOptimizer.cs" />
+    <Compile Include="Optimizer\StopStrategy.cs" />
+    <Compile Include="Optimizer\IOpimizationMethodFactory.cs" />
+    <Compile Include="Optimizer\IStopStrategy.cs" />
+    <Compile Include="Optimizer\ISubOptimizer.cs" />
+    <Compile Include="Optimizer\Optimizer.cs" />
+    <Compile Include="Optimizer\SubOptimizer.cs" />
+    <Compile Include="Optimizer\SVDOptimizer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solution\Case.cs" />
+    <Compile Include="Solution\CaseFactory.cs" />
+    <Compile Include="Solution\CoefficientProblemFactory.cs" />
+    <Compile Include="Solution\FromFileProblemFactory.cs" />
+    <Compile Include="Solution\IControlPointsFactory.cs" />
+    <Compile Include="Solution\IProblemFactory.cs" />
+    <Compile Include="Solution\IRBFNetworkFactory.cs" />
+    <Compile Include="Solution\ITrainerFactory.cs" />
+    <Compile Include="Solution\ProblemFactory.cs" />
+    <Compile Include="Solution\RBFNetworkFactory.cs" />
+    <Compile Include="Solution\RBFNetworkSettings.cs" />
+    <Compile Include="Solution\TrainFactory.cs" />
+    <Compile Include="Statistic\Collector\ErrorMapCollector.cs" />
+    <Compile Include="Statistic\Collector\GraphicCollector.cs" />
+    <Compile Include="Statistic\Collector\RBFGrapthicCollector.cs" />
+    <Compile Include="Statistic\Collector\IStatisticCollector.cs" />
+    <Compile Include="Statistic\Collector\IterationInfoCollector.cs" />
+    <Compile Include="Statistic\Collector\RelativeErrorCollector.cs" />
+    <Compile Include="Statistic\Collector\StatisticCollector.cs" />
+    <Compile Include="Statistic\Statistic.cs" />
+    <Compile Include="Statistic\Collector\ActualGrapthicCollector.cs" />
+    <Compile Include="Statistic\Collector\ErrorHistoryGrapthicCollector.cs" />
+    <Compile Include="Statistic\Collector\NetworkGrapthicCollector.cs" />
+    <Compile Include="Statistic\Collector\RelativeErrorGraphicCollector.cs" />
+    <Compile Include="Statistic\Extention.cs" />
+    <Compile Include="Validation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{52050015-C860-4434-8757-D4146D0CC390}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OptimizationToolbox\OptimizationToolbox.csproj">
+      <Project>{F3F84AF0-712B-4F23-A702-6C0CC6846DD8}</Project>
+      <Name>OptimizationToolbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RBFNetwork\RBFNetwork.csproj">
+      <Project>{3DCBFA0D-DAA4-4FBF-BA3D-9F5E626AA11A}</Project>
+      <Name>RBFNetwork</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
